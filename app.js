@@ -7,14 +7,18 @@ const publicPath = path.join(__dirname, './public');
 
 app.use(express.static(publicPath));
 
-app.listen(3000, () => { 
-    console.log("________________________________________")
-    console.log("                                        ")
-    console.log("Servidor Funcionando en:");
-    console.log("http://localhost:3000");
-    console.log("________________________________________");
-    }
-);
+//app.listen(3000, () => { 
+//    console.log("________________________________________")
+//    console.log("                                        ")
+//    console.log("Servidor Funcionando en:");
+//   console.log("http://localhost:3000");
+//    console.log("________________________________________");
+//    }
+//);
+
+app.listen(process.env.PORT || 3000, function() {
+    console.log("Servidor Corriendo")
+})
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/home.html/"))
